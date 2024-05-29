@@ -9,6 +9,10 @@
     {
       "name": "Test",
       "description": "Test endpoints"
+    },
+    {
+      "name": "Math",
+      "description": "Math endpoints"
     }
   ],
   "paths": {
@@ -27,6 +31,51 @@
                   "properties": {
                     "message": {
                       "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/math": {
+      "post": {
+        "tags": ["Math"],
+        "summary": "Solve a math problem with AI",
+        "description": "This endpoint solves a math problem with AI",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string",
+                    "required": true
+                  },
+                  "imageUrl": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object"
                     }
                   }
                 }
