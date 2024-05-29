@@ -14,10 +14,14 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.19.2",
+    "fs": "^0.0.1-security",
     "request-ip": "^3.3.0",
     "swagger-ui-express": "^5.0.0"
   },
   "devDependencies": {
+    "@eslint/js": "^9.3.0",
+    "eslint": "^9.3.0",
+    "globals": "^15.3.0",
     "nodemon": "^3.1.2"
   }
 }

@@ -5,7 +5,9 @@ import swaggerUi from 'swagger-ui-express';
 
 import { PORT } from './configs/config.js';
 import { routes } from './routes.js';
-import swaggerDocument from './swagger.json' assert { type: 'json' };
+import { readFileSync } from 'fs';
+
+const swaggerDocument = JSON.parse(readFileSync('./swagger.json'));
 
 const app = express();
 
@@ -23,5 +25,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 routes(app);
 
 app.listen(PORT, () => {
-  console.log(`Server is running on: http://localhost:${PORT}`);
+  console.log(
+    `Server is running on: http://localhost:${PORT}, the documentation is on: http://localhost:${PORT}/api-docs`,
+  );
 });
