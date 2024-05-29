@@ -1,0 +1,40 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "EasyMath API Documentation",
+    "description": "This is a simple API for performing basic math operations with AI",
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "Test",
+      "description": "Test endpoints"
+    }
+  ],
+  "paths": {
+    "/test": {
+      "get": {
+        "tags": ["Test"],
+        "summary": "Test endpoint",
+        "description": "This is a test endpoint",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
