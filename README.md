@@ -39,8 +39,9 @@ The API documentation is available at http://localhost:3001/api-docs.
 
 ## Built With
 
-Express.js
-Swagger UI Express
+[Express.js](https://www.npmjs.com/package/express)
+
+[Swagger UI Express](https://www.npmjs.com/package/swagger-ui-express)
 
 ## Authors
 
