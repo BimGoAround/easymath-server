@@ -13,6 +13,10 @@
     {
       "name": "Math",
       "description": "Math endpoints"
+    },
+    {
+      "name": "File",
+      "description": "File endpoints"
     }
   ],
   "paths": {
@@ -57,6 +61,48 @@
                   },
                   "imageUrl": {
                     "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/file/upload": {
+      "post": {
+        "tags": ["File"],
+        "summary": "Upload a file",
+        "description": "This endpoint uploads a file",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
                   }
                 }
               }
