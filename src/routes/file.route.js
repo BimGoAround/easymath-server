@@ -4,7 +4,7 @@ import multer from 'multer';
 import { createPresignedUrl } from '../controllers/file.controller.js';
 import { logMiddleware } from '../middlewares/log.middleware.js';
 
-const upload = multer({ dest: 'uploads/' });
+const upload = multer({ dest: 'src/uploads/' });
 
 const fileRouter = express.Router();
 
