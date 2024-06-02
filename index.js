@@ -15,7 +15,11 @@ app.use(
   cors({
     origin: function (origin, callback) {
       if (!origin) return callback(null, true);
-      if (['http://localhost:5173'].indexOf(origin) === -1) {
+      if (
+        ['http://localhost:5173', `http://localhost:${PORT}`].indexOf(
+          origin,
+        ) === -1
+      ) {
         const msg =
           'The CORS policy for this site does not ' +
           'allow access from the specified Origin.';
