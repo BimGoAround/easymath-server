@@ -14,18 +14,21 @@ export const solveMath = async (req, res) => {
       throw new Error('Message is required');
     }
 
-    const questionContent = [
+    let questionContent = [
       {
         type: 'text',
         text: message,
       },
-      {
+    ];
+
+    if (imageUrl) {
+      questionContent.push({
         type: 'image_url',
         image_url: {
-          url: imageUrl || '',
+          url: imageUrl,
         },
-      },
-    ];
+      });
+    }
 
     const result = await openai.chat.completions.create({
       model: 'gpt-4o',
