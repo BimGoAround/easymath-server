@@ -1,5 +1,5 @@
-// Disable eslint due to process.env is native in NodeJS now
 /* eslint-disable */
+import 'dotenv/config';
 
 export const PORT = process.env.PORT || 8000;
 export const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
