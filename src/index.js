@@ -16,9 +16,11 @@ app.use(
     origin: function (origin, callback) {
       if (!origin) return callback(null, true);
       if (
-        ['http://localhost:5173', `http://localhost:${PORT}`].indexOf(
-          origin,
-        ) === -1
+        [
+          'http://localhost:5173',
+          `http://localhost:${PORT}`,
+          'https://easymath-client.vercel.app',
+        ].indexOf(origin) === -1
       ) {
         const msg =
           'The CORS policy for this site does not ' +
